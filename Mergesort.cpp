@@ -2,7 +2,7 @@
 using namespace std;
 
 
-print(int arr[],int size)	
+int print(int arr[],int size)	
 {
 	cout<<"Sorted array = {";
 	for(int index=0;index<size;index++)
@@ -15,10 +15,11 @@ print(int arr[],int size)
 	}
 	cout<<"}";
 	cout<<"\n";
+	return 0;
 }
 
 
-merge(int arr[],int lb,int mid,int ub)
+int merge(int arr[],int lb,int mid,int ub)
 {
 	int temp[ub+1];
 	int startL = lb;
@@ -65,10 +66,11 @@ merge(int arr[],int lb,int mid,int ub)
 	{
 		arr[start]=temp[start];
 	}
+	return 0;
 }
 
 
-mergesort(int arr[],int lb,int ub)
+int mergesort(int arr[],int lb,int ub)
 {
 	if(lb<ub)
 	{
@@ -77,10 +79,11 @@ mergesort(int arr[],int lb,int ub)
 		mergesort(arr,mid+1,ub);
 		merge(arr,lb,mid,ub);
 	}
+	return 0;
 }
 
 
-main()
+int main()
 {
 	int size;
 	cout<<"Enter the size of the array = ";
@@ -93,4 +96,5 @@ main()
 	}
 	mergesort(arr,0,size-1);
 	print(arr,size);
+	return 0;
 }
