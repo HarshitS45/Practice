@@ -1,3 +1,14 @@
+/*
+ * @Author - Harshit Srivastava
+ * Data structure - Linkedlist implementations 
+ * Available operations - 
+ * insert(nth position) - Add an element at the nth position
+ * remove() - Remove an  element from the Linkedlists
+ * reverse() - Reverse the Linkedlist
+ * print() - Prints the Linkedlist
+ */
+
+
 #include<iostream>
 
 struct Node {
@@ -85,11 +96,13 @@ class LinkedList {
 				std::cout<<"No items in the list\n";
 				return;
 			}
-			std::cout<<"For loop - "<<std::endl;
+
+		      /*std::cout<<"For loop - "<<std::endl;
 			for(Node *temp = head;temp != 0; temp = temp->getNext()) {
 				std::cout<<temp->getData()<<"\t";
 			}
 			std::cout<<std::endl;
+			*/
 
 			std::cout<<"While loop - "<<std::endl;
 			Node *temp = head;
@@ -103,6 +116,8 @@ class LinkedList {
 		Node begin() {
 			return *head;
 		}
+
+		int reverse(); 
 };
 
 //int main() {
