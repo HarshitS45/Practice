@@ -1,6 +1,13 @@
 /*
  * @Author - Harshit Srivastava 
  * Create a library class of doubly linked list which can be used a data structure in another program. 
+ *
+ * Data structure - Doubly Linkedlist implementations
+ * Available operations -
+ * void insert(int element) - Add an element
+ * void remove(int element) - Remove element from the Doubly Linkedlists
+ * void print() - Prints the Doubly Linkedlist
+
  */
  
 #include<iostream>
@@ -61,12 +68,53 @@ class DoublyLinkedlist{
 			}
 			return;
 		}
+		void remove(int element){
+			Node* temp=head,*leftnode=0;
+			if(head==0){
+				cout<<"No elements in linkedlist\n";
+				return;
+			}
+			if(head->getData()==element){				//remove head node
+				head=temp->getNext();
+				temp->setNext(0);
+				head->setPrevious(0);
+				cout<<element<<" Removed    Head modified\n";
+				return;
+			}
+
+			while(temp->hasNext()){
+				leftnode=temp->getPrevious();
+				if(temp->getData()==element){
+					leftnode->setNext(temp->getNext());
+					temp->getNext()->setPrevious(leftnode);
+					temp->setPrevious(0);
+					temp->setNext(0);
+					cout<<element<<" Removed\n";
+					return;
+				}
+				temp=temp->getNext();
+			}
+			if(temp->getData()==element){				//remove last node
+				leftnode=temp->getPrevious();
+				leftnode->setNext(0);
+				temp->setPrevious(0);
+				cout<<element<<" Removed\n";
+				return;
+			}
+			else{
+				cout<<element<<" not found in list\n";
+			}
+			return;
+		}
+
+
 		void print(){
 			if(head==0){
-				cout<<"No elements in Doubly Linkedlist";
+				cout<<"No elements in Doubly Linkedlist\n";
 				return;
 			}
 			Node* temp=head;
+			cout<<"Doubly Linkedlist:\n";
 			while(temp->hasNext()){
 				cout<<temp->getData()<<endl;
 				temp=temp->getNext();
@@ -78,8 +126,17 @@ class DoublyLinkedlist{
 
 int  main(){
 	DoublyLinkedlist A;
-	A.insert(10);
 	A.insert(20);
+	A.insert(20);
+	A.insert(30);
+	A.insert(40);
+	A.insert(40);
+	A.print();
+	A.remove(10);
+	A.remove(30);
+	A.remove(30);
+	A.remove(40);
+	A.remove(50);
 	A.print();
 	return 0;
 }

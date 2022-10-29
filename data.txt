@@ -1,3 +1,0 @@
-Harshit,12,45
-Pulkit,12,67
-Amit,12,88
