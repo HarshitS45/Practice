@@ -6,10 +6,12 @@
  * remove() - Remove an  element from the Linkedlists
  * reverse() - Reverse the Linkedlist
  * print() - Prints the Linkedlist
+ * chechCircularLL() - checks linkedlist is circular or not
  */
 
 
 #include<iostream>
+using namespace std;
 
 struct Node {
 	private:
@@ -118,6 +120,22 @@ class LinkedList {
 		}
 
 		int reverse(); 
+
+		void checkCircularLL(){
+                        if(head==0){
+                                cout<<"Circular Linkedlist";
+                        }
+                        Node* temp=head;
+                        while(temp!=0 && temp!=head){
+                                temp=temp->getNext();
+                        }
+                        if(temp->getNext()==head){
+                                cout<<"Circular Linkedlist";
+                        }
+                        else
+                                cout<<"Not a Circular Linkedlist";
+                }
+
 };
 
 //int main() {
