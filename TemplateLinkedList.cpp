@@ -129,6 +129,7 @@ int main() {
 	ll->insert("third");
 	ll->print();
 	ll->remove("second");
+	ll->reverse();
 	ll->print();
 	LinkedList<int> *llInt = new LinkedList<int>();
 	llInt->insert(1);
@@ -136,6 +137,7 @@ int main() {
 	llInt->insert(3);
 	llInt->print();
 	llInt->remove(1);
+	llInt->reverse();
 	llInt->print();
 	return 0;
 }
