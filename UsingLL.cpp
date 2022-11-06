@@ -1,32 +1,53 @@
+// Add both these linked list to provide single linked list with elementCount = max(elementCount of first, elementCount of second)
+
 #include"LinkedList.cpp"
 
-LinkedList* addTwoLinkedLists(LinkedList* first, LinkedList second) {
-	// Add both these linked list to provide single linked list with elementCount = max(elementCount of first, elementCount of second)
+/*void addTwoLinkedLists(Node* first,Node* second) {
+	Node *temp1=first,*temp2=second;
+	LinkedList C;
+	while(temp1!=0 && temp2!=0){
+		string sum=temp1->getData()+temp2->getData();
+		C.insert(sum);
+		temp1=temp1->getNext();
+		temp2=temp2->getNext();
+	}
 }
-
-int main() {
-         LinkedList *ll = new LinkedList();
-         ll->insert("first");
-         ll->insert("second");
-         ll->insert("third");
-         ll->print();
+*/
+int main(){
+	// Node* head;
+         LinkedList *A = new LinkedList();
+         A->insert("first");
+         A->insert("second");
+         A->insert("third");
+         A->print();
+	 //ll->checkCircularLL();
+	 LinkedList B;
+	 B.insert("-1");
+	 B.insert("-2");
+	 B.insert("-3");
+	 B.print();
+	// addTwoLinkedLists(A->head,B.head);
+	 //DoublyLinkedlist A;
+	 //A.insert(10);
+	 //A.print();
  
-         std::cout<<"Iterating over data - "<<std::endl;
-         Node head = ll->begin();
+         /*std::cout<<"Iterating over data - "<<std::endl;
+         Node head = A->begin();
          while(head.hasNext()) {
-                 std::cout<<"Fount data = "<<head.getData()<<std::endl;
+                 std::cout<<"Found data = "<<head.getData()<<std::endl;
                  head = *head.getNext();
          }
-         std::cout<<"Fount data = "<<head.getData()<<std::endl;
+         std::cout<<"Found data = "<<head.getData()<<std::endl;
+ 	 */
  
+         A->remove("third");
+         //A->print();
  
-         ll->remove("third");
-         ll->print();
- 
-         ll->remove("first");
-         ll->print();
+         A->remove("first");
+         //A->print();
          
-         ll->remove("second");
-         ll->print();
+         A->remove("second");
+         A->print();
+	 
          return 0;
 }
