@@ -7,6 +7,7 @@
  * reverse() - Reverse the Linkedlist
  * print() - Prints the Linkedlist
  * chechCircularLL() - checks linkedlist is circular or not
+ * traverse() - Traverse the Linkedlist
  */
 
 
@@ -77,8 +78,7 @@ class LinkedList {
 				cout<<"Removed "<<data<<" from the linked list. Head modified"<<endl;
 				return temp;
 			}
-			
- 			Node *temp=head,*previousNode=0;
+			Node *temp=head,*previousNode=0;
 			while(temp->getData()!= data && temp->hasNext()) {
 				previousNode = temp;
 				temp = temp->getNext();
@@ -97,9 +97,7 @@ class LinkedList {
 			if(head == 0) {
 				cout<<"No items in the list\n";
 				return;
-			}
-
-			cout<<"While loop - "<<endl;
+		}
 			Node *temp = head;
 			while(temp != 0) {
 				cout<<temp->getData()<<"\t";
@@ -108,8 +106,8 @@ class LinkedList {
 			cout<<endl;
 		}
 
-		Node begin() {
-			return *head;
+		Node* begin() {
+			return this->head;
 		}
 
 		int reverse(); 
@@ -130,5 +128,14 @@ class LinkedList {
                         }
                         cout<<"Not a Circular Linkedlist";
                 }
+
+		void traverse(Node* head){	
+        		 while(head.hasNext()) {
+                 		cout<<"Found data = "<<head.getData()<<endl;
+                 		head = *head.getNext();
+       	 		 }   
+         		 cout<<"Found data = "<<head.getData()<<endl;
+	
+		}
 
 };
