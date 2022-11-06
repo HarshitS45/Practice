@@ -14,22 +14,16 @@
 }
 */
 int main(){
-	// Node* head;
          LinkedList *A = new LinkedList();
          A->insert("first");
          A->insert("second");
          A->insert("third");
          A->print();
-	 //ll->checkCircularLL();
 	 LinkedList B;
 	 B.insert("-1");
 	 B.insert("-2");
 	 B.insert("-3");
 	 B.print();
-	// addTwoLinkedLists(A->head,B.head);
-	 //DoublyLinkedlist A;
-	 //A.insert(10);
-	 //A.print();
  
          /*std::cout<<"Iterating over data - "<<std::endl;
          Node head = A->begin();
@@ -41,11 +35,9 @@ int main(){
  	 */
  
          A->remove("third");
-         //A->print();
- 
-         A->remove("first");
-         //A->print();
-         
+         A->print();
+	 A->remove("first");
+         A->print();
          A->remove("second");
          A->print();
 	 
