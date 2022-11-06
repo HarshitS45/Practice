@@ -102,7 +102,7 @@ class CircularLL{
 
 		}
 
-		void checkCircularLL(){
+		/*void checkCircularLL(){
 			if(head==0){
 				cout<<"Circular Linkedlist";
 			}
@@ -115,7 +115,23 @@ class CircularLL{
 			}
 			else 
 				cout<<"Not a Circular Linkedlist";
-		}
+		}*/
+		void checkCircularLL(){
+                        if(head==0){
+                                cout<<"Circular Linkedlist";
+                                return;
+                        }
+                        Node* temp1=head,*temp2=head;
+                        while(temp1!=0){
+                                temp1=temp1->getNext();
+                                temp2=(temp2->getNext())->getNext();
+                                if(temp1==temp2){
+                                        cout<<"Circular Linkedlist";
+                                        return;
+                                }
+                        }
+                        cout<<"Not a Circular Linkedlist";
+                }
 };
 
 int main(){
