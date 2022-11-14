@@ -1,3 +1,8 @@
+/*
+ * Problem: Reverse of an integer.
+ * @Author - Harshit Srivastava
+ */
+
 #include<iostream>
 using namespace std;
 
