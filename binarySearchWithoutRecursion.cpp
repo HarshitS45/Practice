@@ -1,6 +1,6 @@
-/* Implement binary search for a sorted array without using recursion. 
- *
+/*
  *@Author - Harshit Srivatava
+ *Problem: Implement binary search for a sorted array without using recursion. 
  */
 
 #include<iostream>
