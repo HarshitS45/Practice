@@ -1,3 +1,8 @@
+/*
+ * @Author - Harshit Srivastava
+ * Problem: Binary search using recursion.
+ */
+
 #include<iostream>
 using namespace std;
 
