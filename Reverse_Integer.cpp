@@ -1,6 +1,8 @@
 /*
- * Problem: Reverse of an integer.
  * @Author - Harshit Srivastava
+ * Problem: Reverse of an integer.
+ * Input = 45678
+ * Output= 87654
  */
 
 #include<iostream>

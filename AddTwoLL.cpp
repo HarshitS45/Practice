@@ -1,6 +1,6 @@
 /*
  * @Author - Harshit Srivastava
- * Problem: Add both these linked list to provide single linked list with elementCount = max(elementCount of first, elementCount of second)
+ * Problem: Add two linked list to provide single linked list with elementCount = max(elementCount of first, elementCount of second)
  */
 
 #include "LinkedList.cpp"

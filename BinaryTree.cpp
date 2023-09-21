@@ -2,84 +2,98 @@
 
 
 #include<iostream>
+#include<queue>
 using namespace std;
 
-struct Node{
-	int data;
-	Node *left,*right;
+struct Node {
+    	public:
+        	int data;
+        	Node *left;
+        	Node *right;
 
-	Node(int data){
-		this->data=data;
-		this->right=0;
-		this->left=0;
+        	Node(int data){
+            		this->data=data;
+            		this->left=0;
+            		this->right=0;
+        	}
+};
+
+Node *buildTree(Node *root){
+	cout<<"Enter the data :"<<endl;
+    	int data;
+    	cin>>data;
+    	root= new Node(data);
+    	if(data==-1)
+    	    return NULL;
+    	cout<<"Enter the left side of "<<data<<endl;
+    	root->left=buildTree(root->left);
+    	cout<<"Enter the right side of "<<data<<endl;
+    	root->right=buildTree(root->right);
+    	return root;
+}
+
+void LevelorderTraversal(Node *root){
+	queue<Node *> q;
+	q.push(root);
+	q.push(NULL);
+	while(!q.empty()){
+		Node *temp=q.front();
+		q.pop();
+		if(temp==NULL){
+			cout<<endl;
+			if(!q.empty())
+				q.push(NULL);
+		}
+		else{
+			cout<<temp->data<<" ";
+			if(temp->left)
+				q.push(temp->left);
+			if(temp->right)
+				q.push(temp->right);
+		}
 	}
-};
+	cout<<endl;
+	return;
+}
 
-class BinaryTree{
-//	private:
-		//Node *root=0;
-	public:
-		Node *root=0;
-		int element;
-		void insert(){
-			if(root==0){
-				cout<<"Enter data:";
-				cin>>element;
-				root=new Node(element);
-				return;
-			}
-			Node *temp=root;
-			while(temp->left!=0 && temp->right!=0){
-				temp=temp->left;
-			}
-			Node *leftnode,*rightnode;
-			cout<<"Enter data for left node:";
-			cin>>element;
-			leftnode=new Node(element);
-			temp->left=leftnode;
-			cout<<"Enter data for right node:";
-			cin>>element;
-			rightnode=new Node(element);
-			temp->right=rightnode;
-		}
+void inorderTraversal(Node *root){
+	if(root==NULL)
+		return;
+	inorderTraversal(root->left);
+	cout<<root->data<<" ";
+	inorderTraversal(root->right);
+	cout<<endl;
+	return;
+}
 
-		void remove(){
+void preorderTraversal(Node *root){
+	if(root==NULL)
+		return;
+	cout<<root->data<<" ";
+	preorderTraversal(root->left);
+	preorderTraversal(root->right);
+	cout<<endl;
+	return;
+}
 
-		}
-
-		void print(Node* root){
-			/*Node *temp=root;
-			cout<<root->data;
-			temp1=temp1->left;
-			temp2=temp2->right;
-			while(temp->left!=0 || temp->right!=0){
-				cout<<temp->data;
-				temp=temp->left;
-				temp2=temp2->right;
-			}
-			cout<<temp->data<<endl;
-			*/
-			if(root){
-				cout<<root->data;
-				print(root->left);
-				print(root->right);
-			}
-		}
-
-};
+void postorderTraversal(Node *root){
+	if(root==NULL)
+		return;
+	postorderTraversal(root->left);
+	postorderTraversal(root->right);
+	cout<<root->data<<" "<<endl;
+	return;
+}
 
 int main(){
-	Node *root;
-	BinaryTree A;
-	A.insert();
-	A.insert();
-	A.insert();
-	A.insert();
-	A.insert();
-	A.print(A.root);
+    	Node *root =NULL;
+    	root=buildTree(root);
+	LevelorderTraversal(root);
+    	inorderTraversal(root);
+    	preorderTraversal(root);
+    	postorderTraversal(root);
+	return 0;
 }
-			
-			
-
+	
 
 

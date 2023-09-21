@@ -2,20 +2,52 @@
 
 using namespace std;
 
-int main()
-{
-	struct node
+/*struct node
 	{
 		int data;
 		struct node *next;
 	};
 
-	struct node n;
-	int *head;
-	head=&n.data;
-	cin>>n.data;
-	cout<<n.data;
-	cout<<head;
+class harshit{
+		public:
+			void printname(){
+				cout<<"Harshit";
+			}
+};
+	
+int main(){
+
+	harshit H;
+	harshit *A;
+	A->printname();
+	H.printname();}
+
+void print(int b[5]){
+	int c[5];
+	c[0]=b[0];
+	cout<<c;}
+*/
+
+  //      ans[1]=j;
+        /*for(int j=i+1;j<n;j++){
+            if(arr[j]==j+1){
+                ans[1]=j;
+                break;
+            }
+        }
+        return ans;
+    }*/
+int main()
+{
+	string input;
+	int digit;
+	cin>>input;
+	cin>>digit;
+	int i=0;
+	while(digit<input[i]){
+		i++;
+	}
+	input.insert(i,"digit");
+	cout<<input;
+
 }
-
-

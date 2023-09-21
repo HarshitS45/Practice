@@ -10,16 +10,16 @@
 #include<iostream>
 using namespace std;
 
-template<typename S> struct Node{
+struct Node{
 	private:
-		S data;
+		int data;
 		Node* next;
 	public:
 		Node() {
                         this->next = 0;
                 }
 
-                Node(S data) {
+                Node(int data) {
                         this->data = data;
                         this->next = 0;
                 }
@@ -28,7 +28,7 @@ template<typename S> struct Node{
                         return this->next != 0;
                 }
 
-                S getData() {
+                int getData() {
                         return this->data;
                 }
 
@@ -43,23 +43,29 @@ template<typename S> struct Node{
 
 };
 
-template<typename S> class stack{
+class stack{
 	private:
-		Node<S>* head=0;
+		Node* head=0;
 	public:
-		void push(S element){
-			Node<S>* node=new Node(element);
-			Node<S>* temp=head;
+		void push(int element){
+			Node* node=new Node(element);
+			Node* temp=head;
 			head=node;
 			node->setNext(temp);
+			//cout<<node->getData()<<" Pushed\n";
 			return;
 		}
 
 		void pop(){
-			Node<S>* temp=head;
+			Node* temp=head;
 			head=temp->getNext();
 			temp->setNext(0);
+			//cout<<temp->getData()<<" Popped\n";
 			return;
+		}
+		
+		Node *begin(){
+			return this->head;
 		}
 
 		void print(){
@@ -67,7 +73,7 @@ template<typename S> class stack{
                 		cout<<"No items in the list\n";
                 		return;
         		}
-       			Node<S>* temp = head;
+       			Node* temp = head;
         		while(temp->hasNext()) {
                 		cout<<temp->getData()<<"\t";
                 		temp = temp->getNext();
@@ -78,10 +84,10 @@ template<typename S> class stack{
 		}
 };
 	
-
+/*
 int  main()
 {
-	stack<int> A;
+	stack A;
 	A.push(10);
 	A.push(5);
 	A.push(20);
@@ -99,4 +105,4 @@ int  main()
 	B.print();
 	return 0;
 }
-
+*/
